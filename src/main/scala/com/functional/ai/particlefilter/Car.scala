@@ -22,13 +22,13 @@ object Car {
   }
 
   /**
-    * Computes the true distance to the vehicle ahead (which is what we are trying to estimate with the particle filter)
+    * Computes the true distance to the vehicle ahead (which is what we are trying to estimate with the particle filter).
     * @param time
     * @return
     */
-  def trueDistanceToVehicleAtTime(time: Double) ={
-    //The car stops abruptly when three meters from the vehicle ahead, hence the minimum is bound at 3.
-    Math.max(startDistance - (velocityMean * time), 3)
+  def trueDistanceToVehicleAtTime(time: Double): Double ={
+    //The car stops abruptly when minDistance meters from the vehicle ahead, hence the minimum bound.
+    Math.max(startDistance - (velocityMean * time), minDistance)
   }
 
   /**
@@ -37,7 +37,7 @@ object Car {
   object DistanceSensor{
 
     //The noise of of the car's distance sensor
-    val distanceSigma = 8 //Meters
+    val distanceSigma = 2 //Meters
 
     /**
       * Using the sensor, sample the distance to the vehicle ahead at the given time step, with noise.
