@@ -1,4 +1,4 @@
-package com.functional.ai.particlefilter
+package com.functional.ai.distancecontrol.particlefilter
 
 import scala.annotation.tailrec
 import scala.util.Random
