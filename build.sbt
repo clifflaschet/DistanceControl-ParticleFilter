@@ -7,6 +7,6 @@ lazy val root = (project in file(".")).
     )),
     name := "distancecontrol-particlefilter",
     libraryDependencies ++= Seq(
-      //"org.scalanlp" %% "breeze" % "0.13.2"
+      "org.scalanlp" %% "breeze" % "0.13.2"
     )
   )
